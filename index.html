@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>202 Deco Factory</title>
+    <style>
+        *, p, h1{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         :root {
+            --red: #61091a;
+            --gray: #4a4a4b;
+            --dark: #1A1A1A;
+            --darker-overlay: rgba(26, 26, 26, 0.7);
+        }
+
+        body {
+            background-color: var(--dark);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-cs {
+            background-image: url('recursos/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-gray);
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .hero-cs::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(141, 92, 85, 0.9) 0%, 
+                rgba(189, 130, 106, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-cs-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-cs h1 {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            font-weight: 700;
+            z-index: 1000;
+        }
+
+        .wood-pallets h1:first-child {
+            color: var(--gray);
+        }
+
+        .wood-pallets h1:last-child {
+            color: var(--red);
+        }
+
+
+        .hero-cs p {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #ffffff;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none; /* Quitar el subrayado de los enlaces */
+        }
+
+        .social-icons a:hover {
+            color: var(--wood-orange);
+            transform: translateY(-5px);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .construction-icon {
+            font-size: 3.5rem;
+            color: var(--wood-orange);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: pulse 2s infinite;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            filter: saturate(1.3);
+        }
+
+         .coming-soon {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 0.5rem 2rem;
+            border-radius: 30px;
+        }
+
+        @font-face {
+            font-family: 'Serpentine';
+            src: url('recursos/serpentine.ttf') format('truetype');
+            font-weight: 400;
+        }
+        .font-serpentine {
+            font-family: 'Serpentine', sans-serif;
+        }
+        @font-face {
+            font-family: 'Constantia';
+            src: url('recursos/constantia.ttf') format('truetype');
+            font-weight: 400;
+        }
+        .font-constantia {
+            font-family: 'Constantia', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wood-pallets {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .macorsa {
+            display: flex;
+            justify-content: right;
+            width: 100%;
+        }
+
+        .macorsa-text {
+            font-size: 2.8rem;
+            color: white;
+            background-color: var(--red);
+            padding-right: 0.5rem;
+            padding-left: 7rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-cs h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-cs p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+            
+            .construction-icon {
+                font-size: 3rem;
+            }
+            
+            .wood-pallets {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-cs h1 {
+                font-size: 2rem;
+            }
+
+            .hero-cs p {
+                font-size: 1rem;
+            }
+
+            .construction-icon {
+                font-size: 2.5rem;
+            }
+
+            .coming-soon {
+                font-size: 1.2rem;
+                padding: 0.6rem 2rem;
+            }
+            
+            .social-icons a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+             .wood-pallets h1{
+                font-size: 3.5rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-cs">
+        <div class="container hero-cs-content">
+            
+            <div class="hero-text font-serpentine">
+                <div class="wood-pallets">
+                    <h1>WOOD</h1>
+                    <h1>PALLETS</h1>
+                </div>
+                <div class="macorsa">
+                    <h1 class="macorsa-text font-constantia">MACORSA</h1>
+                </div>
+            </div>
+            
+            <p class="hero-text font-constantia">Nuestro nuevo sitio web estará disponible pronto.</p>
+
+            <div class="coming-soon font-serpentine">Próximamente</div>
+
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
