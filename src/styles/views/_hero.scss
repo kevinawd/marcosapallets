@@ -1,0 +1,79 @@
+@use "../base/variables" as v;
+
+header {
+    background-image: url('../src/assets/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.1) 100%);
+        z-index: 1;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(20px);
+}
+
+.wood-pallets h1:first-child {
+    color:  v.$sec-color;
+}
+
+.wood-pallets h1:last-child {
+    color: v.$main-color;
+}
+
+.wood-pallets {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.macorsa {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    img {
+        width: 35%;
+    }
+    .macorsa-text {
+        height: fit-content;
+        font-family: 'Constantia', sans-serif;
+        font-size: 4.2rem;
+        color: white;
+        background-color: v.$main-color;
+        padding-right: 0.5rem;
+        padding-left: 10rem;
+    }
+}
+
+

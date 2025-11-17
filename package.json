@@ -1,0 +1,23 @@
+{
+  "name": "marcosapallets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "build": "sass --watch src/styles/main.scss dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinawd/marcosapallets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinawd/marcosapallets/issues"
+  },
+  "homepage": "https://github.com/kevinawd/marcosapallets#readme",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.93.3"
+  }
+}

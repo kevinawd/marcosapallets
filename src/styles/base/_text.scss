@@ -1,0 +1,22 @@
+@use "../base/variables" as v;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400;
+}
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    font-weight: 700;
+}
+
+h1, h2 {
+    font-family: 'Serpentine', sans-serif;
+}
+
+h2 {
+    color: v.$sec-color;
+}
