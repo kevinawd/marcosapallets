@@ -1,40 +1,54 @@
 @use "../base/variables" as v;
 
 #nosotros {
+    padding: 6rem 3rem;
     .container {
+        background-color: white;
+        padding-left: 15rem;
+        margin-left: 13rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         img {
             position: absolute;
-            width: 17rem;
+            width: 20rem;
             top: 30%;
             left: -10%;
-            // transform: translate(-45%, -50%);
         }
     }
 }
 
 #mision {
-    .container {
-        img {
-            position: absolute;
-            width: 14rem;
-            top: 30%;
-            right: -10%;
-            // transform: translate(45%, -40%);
-        }
-    }
-}
-
-#servicios, #objetivos, #permisos{
-    margin: 0;
+    background: v.$main-gradient;
+    padding: 6rem 13rem;
     .container {
         width: 100%;
-        padding: 3rem;
+        margin: 0;
+        padding: 0;      
+        .cards {
+            .card {
+                color: white;
+                flex-direction: column;
+                gap: 2rem;
+                justify-content: flex-start;
+                background: none;
+                box-shadow: none;
+                p {
+                    color: whitesmoke;
+                }
+            }
+        }
+        // img {
+        //     position: absolute;
+        //     width: 14rem;
+        //     top: 30%;
+        //     right: -10%;
+        // }
     }
 }
 
 #servicios {
+    padding-bottom: 0;
     .container {
-        position: relative;
+        padding-bottom: 0;
         .cards {
             width: 100%;
             .card {
@@ -42,7 +56,7 @@
                 padding: 0;
                 overflow: hidden;
                 .img-container {
-                    height: 8rem;
+                    height: 12rem;
                     width: 100%;
                     img {
                         height: 100%;
@@ -55,50 +69,55 @@
                     justify-content: center;
                     align-items: center;
                     height: 100%;
+                    width: 100%;
                     padding: 0.5rem;
+                    background: white;
                     p {
                         font-size: v.$ft-sz-sm;
                     }
                 }
             }
         }
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1200' height='600' preserveAspectRatio='none' viewBox='0 0 1200 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1118%26quot%3b)' fill='none'%3e%3cpath d='M-206.3 382.67C-107.65 382.95-12.13 452.67 182.05 452.67 376.22 452.67 369.77 381.03 570.39 382.67 771.01 384.31 840.94 641.51 958.74 654.57' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-146.19 123.27C-54.01 134.4-34.29 315.2 154.2 341.67 342.69 368.14 358.24 575.43 454.59 590.94' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-180.62 140.34C-90.56 147.85-62.25 307.64 126.67 330.74 315.58 353.84 334.85 573.19 433.95 589.66' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-49.52 459.09C42.88 459.41 131.94 529.09 313.4 529.09 494.86 529.09 494.15 459.03 676.31 459.09 858.47 459.15 942.54 590.91 1039.23 593.02' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-41.86 444.4C58.9 438.54 132.15 253.16 314.13 254 496.11 254.84 549.51 569.82 670.12 595.95' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1118'%3e%3crect width='1200' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
-            filter: brightness(0) saturate(100%) invert(57%) sepia(10%) saturate(2392%) hue-rotate(5deg) brightness(94%) contrast(93%);
-            opacity: 0.8;
-        }
     }
 }
 
 #permisos {
     .container {
-        .imgs {
+        .content-ct {
             display: flex;
+            gap: 2rem;
+            .cards {
             flex-direction: column;
-            position: absolute;
-            height: 100%;
-            align-items: space-around;
-            top: 50%;
-            left: -5%;
-            transform: translate(-50%, -50%);
-            padding: 20px 0;
-            gap: 10px;
-            .img {
+            width: 50%;
+            }
+            .img-ct {
                 display: flex;
-                border-radius: 1rem;
-                background: white;
-                flex: 1;
-                padding: 8px;
-                height: 10%;
-                border: 0.1rem solid v.$sec-color;
-                width: fit-content;
-                img {
-                    position: relative;
-                    top: 0;
-                    left: 0;
+                flex-direction: column;
+                height: 100%;
+                gap: 5%;
+                .img-row {
+                    display: flex;
+                    height: 30%;
+                    gap: 1rem;
+                    .img {
+                        display: flex;
+                        justify-content: center;
+                        border-radius: 1rem;
+                        background: white;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        flex: 1;
+                        padding: 1.5rem;
+                        img {
+                            height: auto;
+                            width: 100%;
+                            object-fit: contain;
+                        }
+                        &:hover {
+                            transition: 0.3s ease-in-out;
+                            transform: scale(1.02);
+                        }
+                    }
+                    
                 }
             }
         }
@@ -106,7 +125,11 @@
 }
 
 #objetivos {
-    .cards {
-        flex-direction: column;
+    padding-bottom: 0;
+    .container {
+        padding-bottom: 0;
+        .cards {
+            flex-direction: column;
+        }
     }
 }

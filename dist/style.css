@@ -34,7 +34,7 @@ body {
   padding: 5%;
 }
 .container p {
-  color: white;
+  color: #333;
   font-size: 1.3rem;
   line-height: 2rem;
   letter-spacing: 1px;
@@ -47,28 +47,12 @@ section {
 }
 section .container {
   position: relative;
-  background: linear-gradient(90deg, rgb(97, 9, 26) 0%, rgb(167, 16, 16) 100%);
   padding: 3rem;
   border-radius: 1.5rem;
   text-align: justify;
 }
 
-.right {
-  margin-left: 8rem;
-}
-.right .container {
-  padding-left: 12rem;
-}
-
-.left {
-  margin-right: 8rem;
-}
-.left .container {
-  background: linear-gradient(90deg, rgb(74, 74, 75) 0%, rgb(136, 136, 136) 100%);
-  padding-right: 12rem;
-}
-
-.title-glass, .subtitle-glass {
+.title-glass, .title-red, .subtitle-glass {
   width: fit-content;
   padding: 0.2rem 1rem;
   border-radius: 1.5rem;
@@ -78,8 +62,12 @@ section .container {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.title-red {
+  background-color: rgba(97, 9, 26, 0.9);
+}
+
 .subtitle-glass {
-  background-color: rgba(202, 165, 76, 0.527);
+  background-color: rgba(202, 165, 76, 0.8);
   padding: 0.5rem 5rem;
 }
 
@@ -91,15 +79,19 @@ section .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
   color: white;
   text-align: center;
   padding: 1rem;
   border-radius: 1.5rem;
   font-size: 1.3rem;
   flex: 1;
-  background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.cards .card:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.02);
 }
 
 @keyframes fadeInUp {
@@ -129,7 +121,7 @@ section .container {
 nav {
   position: fixed;
   display: flex;
-  background: linear-gradient(90deg, rgb(97, 9, 26) 0%, rgb(167, 16, 16) 100%);
+  background: linear-gradient(90deg, rgb(97, 9, 26) 0%, rgb(141, 33, 33) 100%);
   justify-content: space-between;
   font-family: "Serpentine", sans-serif;
   letter-spacing: 1.5px;
@@ -249,12 +241,12 @@ nav .elementos a:hover {
 
 @font-face {
   font-family: "Serpentine";
-  src: url("../src/assets/serpentine.ttf") format("truetype");
+  src: url("/assets/serpentine.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Constantia";
-  src: url("../src/assets/constantia.ttf") format("truetype");
+  src: url("/assets/constantia.ttf") format("truetype");
   font-weight: 400;
 }
 a {
@@ -301,25 +293,29 @@ a {
   }
 }
 footer {
-  background-color: #61091a;
-  color: white;
+  background: linear-gradient(90deg, rgb(97, 9, 26) 0%, rgb(141, 33, 33) 100%);
 }
-footer h2 {
+footer .container .title-red {
+  background: none;
+  box-shadow: none;
+}
+footer .container h2 {
   font-family: "Serpentine", sans-serif;
   font-size: 2rem;
 }
-footer .elements {
+footer .container .elements {
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
-footer .elements a {
+footer .container .elements a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
 }
 
 header {
-  background-image: url("../src/assets/hero.jpg");
+  background-image: url("/assets/hero.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -328,16 +324,17 @@ header {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  z-index: 1;
 }
-header::before {
+header::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.1) 100%);
-  z-index: 1;
+  background: linear-gradient(90deg, rgba(252, 242, 242, 0.4) 30%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: -1;
 }
 
 .hero-content {
@@ -394,30 +391,48 @@ header::before {
   padding-left: 10rem;
 }
 
+#nosotros {
+  padding: 6rem 3rem;
+}
+#nosotros .container {
+  background-color: white;
+  padding-left: 15rem;
+  margin-left: 13rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 #nosotros .container img {
   position: absolute;
-  width: 17rem;
+  width: 20rem;
   top: 30%;
   left: -10%;
 }
 
-#mision .container img {
-  position: absolute;
-  width: 14rem;
-  top: 30%;
-  right: -10%;
+#mision {
+  background: linear-gradient(90deg, rgb(97, 9, 26) 0%, rgb(141, 33, 33) 100%);
+  padding: 6rem 13rem;
 }
-
-#servicios, #objetivos, #permisos {
-  margin: 0;
-}
-#servicios .container, #objetivos .container, #permisos .container {
+#mision .container {
   width: 100%;
-  padding: 3rem;
+  margin: 0;
+  padding: 0;
+}
+#mision .container .cards .card {
+  color: white;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: flex-start;
+  background: none;
+  box-shadow: none;
+}
+#mision .container .cards .card p {
+  color: whitesmoke;
 }
 
+#servicios {
+  padding-bottom: 0;
+}
 #servicios .container {
-  position: relative;
+  padding-bottom: 0;
 }
 #servicios .container .cards {
   width: 100%;
@@ -428,7 +443,7 @@ header::before {
   overflow: hidden;
 }
 #servicios .container .cards .card .img-container {
-  height: 8rem;
+  height: 12rem;
   width: 100%;
 }
 #servicios .container .cards .card .img-container img {
@@ -441,49 +456,59 @@ header::before {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
   padding: 0.5rem;
+  background: white;
 }
 #servicios .container .cards .card .text-container p {
   font-size: 1rem;
 }
-#servicios .container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1200' height='600' preserveAspectRatio='none' viewBox='0 0 1200 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1118%26quot%3b)' fill='none'%3e%3cpath d='M-206.3 382.67C-107.65 382.95-12.13 452.67 182.05 452.67 376.22 452.67 369.77 381.03 570.39 382.67 771.01 384.31 840.94 641.51 958.74 654.57' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-146.19 123.27C-54.01 134.4-34.29 315.2 154.2 341.67 342.69 368.14 358.24 575.43 454.59 590.94' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-180.62 140.34C-90.56 147.85-62.25 307.64 126.67 330.74 315.58 353.84 334.85 573.19 433.95 589.66' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-49.52 459.09C42.88 459.41 131.94 529.09 313.4 529.09 494.86 529.09 494.15 459.03 676.31 459.09 858.47 459.15 942.54 590.91 1039.23 593.02' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-41.86 444.4C58.9 438.54 132.15 253.16 314.13 254 496.11 254.84 549.51 569.82 670.12 595.95' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1118'%3e%3crect width='1200' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
-  filter: brightness(0) saturate(100%) invert(57%) sepia(10%) saturate(2392%) hue-rotate(5deg) brightness(94%) contrast(93%);
-  opacity: 0.8;
-}
 
-#permisos .container .imgs {
+#permisos .container .content-ct {
+  display: flex;
+  gap: 2rem;
+}
+#permisos .container .content-ct .cards {
+  flex-direction: column;
+  width: 50%;
+}
+#permisos .container .content-ct .img-ct {
   display: flex;
   flex-direction: column;
-  position: absolute;
   height: 100%;
-  align-items: space-around;
-  top: 50%;
-  left: -5%;
-  transform: translate(-50%, -50%);
-  padding: 20px 0;
-  gap: 10px;
+  gap: 5%;
 }
-#permisos .container .imgs .img {
+#permisos .container .content-ct .img-ct .img-row {
   display: flex;
+  height: 30%;
+  gap: 1rem;
+}
+#permisos .container .content-ct .img-ct .img-row .img {
+  display: flex;
+  justify-content: center;
   border-radius: 1rem;
   background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   flex: 1;
-  padding: 8px;
-  height: 10%;
-  border: 0.1rem solid #4a4a4b;
-  width: fit-content;
+  padding: 1.5rem;
 }
-#permisos .container .imgs .img img {
-  position: relative;
-  top: 0;
-  left: 0;
+#permisos .container .content-ct .img-ct .img-row .img img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+#permisos .container .content-ct .img-ct .img-row .img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.02);
 }
 
-#objetivos .cards {
+#objetivos {
+  padding-bottom: 0;
+}
+#objetivos .container {
+  padding-bottom: 0;
+}
+#objetivos .container .cards {
   flex-direction: column;
 }
 

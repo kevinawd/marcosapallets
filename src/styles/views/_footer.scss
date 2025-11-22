@@ -1,19 +1,25 @@
 @use "../base/variables" as v;
 
 footer {
-    background-color: v.$main-color;
-    color: white;
-    h2 {
-        font-family: 'Serpentine', sans-serif;
-        font-size: 2rem;
-    }
-    .elements {
-        display: flex;
-        justify-content: space-between;
-        a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
+    background: v.$main-gradient;
+    .container {
+        .title-red {
+            background: none;
+            box-shadow: none;
+        }
+        h2 {
+            font-family: 'Serpentine', sans-serif;
+            font-size: 2rem;
+        }
+        .elements {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.2rem;
+            }
         }
     }
 }
