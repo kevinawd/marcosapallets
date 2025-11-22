@@ -4,11 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "dev": "concurrently \"node server.js\" \"sass --watch src/styles/main.scss dist/style.css\"",
-  "build": "sass src/styles/main.scss dist/style.css"
-} 
-
-  ,
+    "build": "sass --watch src/styles/main.scss dist/style.css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevinawd/marcosapallets.git"
@@ -23,9 +20,5 @@
   "description": "",
   "devDependencies": {
     "sass": "^1.93.3"
-  },
-  "dependencies": {
-    "concurrently": "^9.2.1",
-    "express": "^5.1.0"
   }
 }

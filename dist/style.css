@@ -241,12 +241,12 @@ nav .elementos a:hover {
 
 @font-face {
   font-family: "Serpentine";
-  src: url("/assets/serpentine.ttf") format("truetype");
+  src: url("/src/assets/serpentine.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Constantia";
-  src: url("/assets/constantia.ttf") format("truetype");
+  src: url("/src/assets/constantia.ttf") format("truetype");
   font-weight: 400;
 }
 a {
@@ -315,7 +315,7 @@ footer .container .elements a {
 }
 
 header {
-  background-image: url("/assets/hero.jpg");
+  background-image: url("/src/assets/hero.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
