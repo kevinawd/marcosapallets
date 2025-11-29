@@ -1,4 +1,11 @@
 @use "../base/variables" as v;
+@use "../components/mixins" as m;
+
+*, p, h1{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background: whitesmoke;
@@ -75,4 +82,48 @@ section {
             transform: scale(1.02);
         }
     }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    z-index: 10;
+}
+
+.desktop {
+    display: flex;
+    @include m.telefono {
+        display: none !important;
+    }
+}
+
+.tel {
+    display: none !important;
+    @include m.telefono {
+        display: flex !important;
+    }
+}
+
+@include m.telefono {
+    .title-glass, .title-red {
+        display: flex;
+        max-width: 80vw;
+        font-size: v.$ft-sz-sm;
+        flex-wrap: nowrap;
+    }
+
+    .container {
+        padding: 0 !important;
+    }
+
+    .cards {
+        flex-direction: column;
+    .card {
+    }
+}
 }

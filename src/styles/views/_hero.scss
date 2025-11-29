@@ -1,4 +1,5 @@
 @use "../base/variables" as v;
+@use "../components/mixins" as m;
 
 header {
     background-image: url('/src/assets/hero.jpg');
@@ -77,4 +78,23 @@ header {
     }
 }
 
+@include m.telefono {
+    .hero-text {
+        gap: 1.5rem;
+    }
 
+    .wood-pallets {
+        flex-direction: column;
+        font-size: 2rem;
+    }
+    .macorsa {
+        justify-content: center;
+        img {
+            width: 50%;
+        }
+        .macorsa-text {
+            font-size: v.$ft-sz-lg;
+            padding-left: 6rem;
+        }
+    }
+}

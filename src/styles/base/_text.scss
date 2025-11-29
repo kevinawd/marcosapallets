@@ -20,3 +20,15 @@ h1, h2 {
 h2 {
     color: v.$sec-color;
 }
+
+@font-face {
+    font-family: 'Serpentine';
+    src: url('/src/assets/serpentine.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Constantia';
+    src: url('/src/assets/constantia.ttf') format('truetype');
+    font-weight: 400;
+}

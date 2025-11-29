@@ -12,29 +12,35 @@
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <div class="logo-bg">
             <img src="/src/assets/logo-bg.png" alt="Logo de Macorsa">
         </div>
         <div class="logo">
             <img src="/src/assets/logo-png.png" alt="Logo de Macorsa">
         </div>
-        <div class="elementos">
+        <div class="elementos" id="elementos">
             <a href="#nosotros">Nosotros</a>
             <a href="#servicios">Servicios</a>
             <a href="#permisos">Permisos</a>
             <a href="#contacto">Contacto</a>
         </div>
+        <div class="burguer" id="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </nav>
     <header>
         <div class="container hero-content">  
             <div class="hero-text animate__animated animate__slideInDown">
+                <div class="macorsa tel">
+                    <img src="/src/assets/logo-wood-png.png" alt="">
+                </div>
                 <div class="wood-pallets">
                     <h1>WOOD</h1>
                     <h1>PALLETS</h1>
                 </div>
                 <div class="macorsa">
-                    <img src="/src/assets/logo-wood-png.png" alt="">
+                    <img src="/src/assets/logo-wood-png.png" class="desktop" alt="">
                     <h2 class="macorsa-text">MACORSA</h2>
                 </div>
             </div>
@@ -45,17 +51,11 @@
     <section id="nosotros" >
         <div class="container">
             <h2 class="title-red wow animate__animated animate__backInRight">¿Quienes somos?</h2>
-            <p>Somos una empresa especializada en la
-            manufactura, compra, venta y reparación de tarimas recicladas,
-            mixta, hibrida o nueva, ya sea pino o encino. Con más de 35 años en el
-            mercado, nuestros clientes respaldan nuestros servicios.
-            Nuestro proyecto es basado en el cuidado del medioambiente. Por lo
-            tanto, nos renovamos para nuestros clientes al expandir nuestros
-            servicios de recolección de materiales reciclables de madera. Con el
-            cual se dará un seguimiento seguro a los materiales recaudados.
-            Nuestras instalaciones cuentan con la infraestructura necesaria para
-            el acopio del material.<br><br>
-            Las localizaciones son: Planta 1 – Rio Bravo y Planta 2 – Reynosa</p>
+            <p>Somos una empresa especializada en la manufactura, compra, venta y reparación de tarimas recicladas, mixtas, híbridas o nuevas, ya sea de pino o encino. Con más de 35 años de experiencia en el mercado, nuestros clientes respaldan la calidad, responsabilidad y compromiso que nos distinguen.</p>
+            <p>Nuestra historia se construye sobre un legado familiar de trabajo, esfuerzo y dedicación. Ese legado es la base que nos impulsa a seguir creciendo, innovando y brindando soluciones que combinan tradición, calidad y sostenibilidad.</p>
+            <p>En WOOD PALLETS MACORSA, creemos firmemente en el cuidado del medioambiente. Por ello, hemos ampliado nuestros servicios con la recolección de materiales reciclables de madera, garantizando un manejo responsable y un seguimiento seguro de los recursos naturales.</p>
+            <p>Contamos con instalaciones e infraestructura adecuadas para el acopio, clasificación y transformación del material, reafirmando nuestro compromiso con la sustentabilidad, la excelencia y la mejora continua.</p>
+            <p>Más que una empresa, somos una familia que trabaja con orgullo, honrando nuestras raíces y mirando hacia el futuro con la misma dedicación que nos ha acompañado desde el primer día…</p>
             <img class="wow animate__animated animate__backInLeft" src="/src/assets/img1.png" alt="">
         </div>
     </section>
@@ -170,16 +170,19 @@
                         </div>
                     </div>
                    <div class="img-row">
-                     <div class="img">
-                        <img src="/src/assets/profepa.png" alt="">
+                        <div class="img">
+                            <img src="/src/assets/profepa.png" alt="">
                         </div>
                         <div class="img">
-                            <img src="/src/assets/seduma.png" alt="">
+                            <img src="/src/assets/repse.png" alt="">
                         </div>
                    </div>
                    <div class="img-row">
                         <div class="img">
                             <img src="/src/assets/semarnat.png" alt="">
+                        </div>
+                        <div class="img">
+                            <img src="/src/assets/seduma.png" alt="">
                         </div>
                    </div>
                 </div>
@@ -190,13 +193,16 @@
         <div class="container">
             <h2 class="title-red">Comunicate con nosotros</h2>
             <div class="elements">
-                <a href=""><b>Oficina<br>Telefono:</b> (899) 177- 13-50</a>
-                <a href=""><b>Ing. Miguel Garcia<br>Telefono:</b> (899) 244-99-16</a>
-                <a href=""><b>Correo electrónico</b><br>Woodpalletsma@gmail.com</a>
+                <a href=""><b>Oficina<br>Telefono:</b>(899) 246 8476</a>
+                <a href=""><b>Horario:<br></b> lunes a viernes de 7:30 am a 6pm</a>
+                <a href=""><b>Direeccion<br></b> Libramiento Oriente 406 Col Ernesto Zedillo Reynosa Tmps Mexico</a>
+                <a href=""><b>Correo electrónico</b><br>sales@woodpalletsmacorsa.com</a>
             </div>
         </div>
     </footer>
+    <div class="overlay" id="overlay"></div>
 </body>
+<script src="dist/main.js"></script>
 <script>
   new WOW().init();
 </script>

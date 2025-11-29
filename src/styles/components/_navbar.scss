@@ -1,4 +1,5 @@
 @use "../base/variables" as v;
+@use "../components/mixins" as m;
 
 nav {
     position: fixed;
@@ -11,6 +12,7 @@ nav {
     width: 100%;
     z-index: 100;
     padding: 0.8rem 3rem;
+    transition: all 0.8s;
     .logo-bg {
         position: absolute;
         height: 100%;
@@ -36,12 +38,54 @@ nav {
     .elementos {
         display: flex;
         gap: 2rem;
+        transition: all 0.8s;
         a {
             color: white;
             text-decoration: none;
             &:hover {
                 color: v.$main-lg-color;
                 transform: scale(1.05);
+            }
+        }
+    }
+    .burguer {
+        display: none;
+    }
+}
+
+@include m.telefono {
+    nav {
+        position: relative;
+        background: white;
+        .logo-bg {
+            display: none;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .elementos {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(100%);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            height: 100vh;
+            width: 70%;
+            z-index: 1000;
+            a {
+                color: v.$main-color;
+            }
+        }
+        .burguer {
+            display: block;
+            i {
+                font-size: 2rem;
+                color: v.$main-color;
             }
         }
     }

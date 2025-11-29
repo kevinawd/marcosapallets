@@ -19,6 +19,22 @@ h2 {
   color: #4a4a4b;
 }
 
+@font-face {
+  font-family: "Serpentine";
+  src: url("/src/assets/serpentine.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Constantia";
+  src: url("/src/assets/constantia.ttf") format("truetype");
+  font-weight: 400;
+}
+*, p, h1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: whitesmoke;
 }
@@ -94,6 +110,49 @@ section .container {
   transform: scale(1.02);
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  z-index: 10;
+}
+
+.desktop {
+  display: flex;
+}
+@media (max-width: 450px) {
+  .desktop {
+    display: none !important;
+  }
+}
+
+.tel {
+  display: none !important;
+}
+@media (max-width: 450px) {
+  .tel {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .title-glass, .title-red {
+    display: flex;
+    max-width: 80vw;
+    font-size: 1rem;
+    flex-wrap: nowrap;
+  }
+  .container {
+    padding: 0 !important;
+  }
+  .cards {
+    flex-direction: column;
+  }
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -129,6 +188,7 @@ nav {
   width: 100%;
   z-index: 100;
   padding: 0.8rem 3rem;
+  transition: all 0.8s;
 }
 nav .logo-bg {
   position: absolute;
@@ -155,6 +215,7 @@ nav .logo img {
 nav .elementos {
   display: flex;
   gap: 2rem;
+  transition: all 0.8s;
 }
 nav .elementos a {
   color: white;
@@ -164,132 +225,45 @@ nav .elementos a:hover {
   color: #d38494;
   transform: scale(1.05);
 }
-
-*, p, h1 {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+nav .burguer {
+  display: none;
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards 0.6s;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards 0.6s;
-}
-
-.social-icons a {
-  color: white;
-  font-size: 1.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-}
-
-.social-icons a:hover {
-  color: var(--wood-orange);
-  transform: translateY(-5px);
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.construction-icon {
-  font-size: 3.5rem;
-  color: var(--wood-orange);
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: pulse 2s infinite;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  filter: saturate(1.3);
-}
-
-.coming-soon {
-  font-size: 1.5rem;
-  color: white;
-  margin-top: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards 0.4s;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 0.5rem 2rem;
-  border-radius: 30px;
-}
-
-@font-face {
-  font-family: "Serpentine";
-  src: url("/src/assets/serpentine.ttf") format("truetype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Constantia";
-  src: url("/src/assets/constantia.ttf") format("truetype");
-  font-weight: 400;
-}
-a {
-  text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .hero-cs h1 {
-    font-size: 2.5rem;
+@media (max-width: 450px) {
+  nav {
+    position: relative;
+    background: white;
   }
-  .hero-cs p {
-    font-size: 1.1rem;
-    padding: 0 1rem;
+  nav .logo-bg {
+    display: none;
   }
-  .construction-icon {
-    font-size: 3rem;
+  nav .logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
-  .wood-pallets {
+  nav .elementos {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
     flex-direction: column;
-    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 100vh;
+    width: 70%;
+    z-index: 1000;
   }
-}
-@media (max-width: 480px) {
-  .hero-cs h1 {
+  nav .elementos a {
+    color: #61091a;
+  }
+  nav .burguer {
+    display: block;
+  }
+  nav .burguer i {
     font-size: 2rem;
-  }
-  .hero-cs p {
-    font-size: 1rem;
-  }
-  .construction-icon {
-    font-size: 2.5rem;
-  }
-  .coming-soon {
-    font-size: 1.2rem;
-    padding: 0.6rem 2rem;
-  }
-  .social-icons a {
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
-  }
-  .wood-pallets h1 {
-    font-size: 3.5rem;
+    color: #61091a;
   }
 }
 footer {
@@ -391,6 +365,25 @@ header::after {
   padding-left: 10rem;
 }
 
+@media (max-width: 450px) {
+  .hero-text {
+    gap: 1.5rem;
+  }
+  .wood-pallets {
+    flex-direction: column;
+    font-size: 2rem;
+  }
+  .macorsa {
+    justify-content: center;
+  }
+  .macorsa img {
+    width: 50%;
+  }
+  .macorsa .macorsa-text {
+    font-size: 2.5rem;
+    padding-left: 6rem;
+  }
+}
 #nosotros {
   padding: 6rem 3rem;
 }
@@ -470,7 +463,7 @@ header::after {
 }
 #permisos .container .content-ct .cards {
   flex-direction: column;
-  width: 50%;
+  width: 80%;
 }
 #permisos .container .content-ct .img-ct {
   display: flex;
@@ -510,6 +503,34 @@ header::after {
 }
 #objetivos .container .cards {
   flex-direction: column;
+}
+
+@media (max-width: 450px) {
+  #permisos .container .content-ct {
+    flex-direction: column;
+  }
+  #permisos .container .content-ct .cards {
+    width: 100%;
+  }
+  #permisos .container .content-ct .img-ct {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 1rem;
+    gap: 1.2rem;
+  }
+  #permisos .container .content-ct .img-ct .img-row {
+    gap: 1.2rem;
+    height: fit-content;
+  }
+  #permisos .container .content-ct .img-ct .img-row .img {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
