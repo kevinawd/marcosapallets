@@ -26,3 +26,26 @@ window.addEventListener("scroll", () => {
 
     lastScroll = currentScroll;
 });
+
+const cards = document.querySelectorAll(".card-us");
+let index = 0;
+
+function changeCard() {
+    const current = cards[index];
+    current.classList.remove("active");
+    current.classList.add("exit-left");
+
+    index = (index + 1) % cards.length;
+    const next = cards[index];
+
+    next.classList.add("enter-right");
+
+    setTimeout(() => {
+        current.classList.remove("exit-left");
+
+        next.classList.remove("enter-right");
+        next.classList.add("active");
+    }, 800);
+}
+
+setInterval(changeCard, 9000);
