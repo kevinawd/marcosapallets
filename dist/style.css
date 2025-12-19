@@ -444,10 +444,12 @@ header::after {
 }
 #nosotros .container {
   background-color: white;
+  padding-bottom: 1.5rem;
   padding-left: 15rem;
   margin-left: 13rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   min-width: calc(100% - 20rem);
+  position: relative;
 }
 #nosotros .container img {
   position: absolute;
@@ -457,7 +459,7 @@ header::after {
 }
 #nosotros .container .carousel {
   position: relative;
-  height: 40vh;
+  height: 43vh;
   overflow: hidden;
   width: 100%;
 }
@@ -482,6 +484,51 @@ header::after {
 #nosotros .container .carousel .card-us.enter-right {
   left: 0;
   opacity: 1;
+}
+#nosotros .container .carousel .carousel-controls {
+  position: absolute;
+  bottom: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+#nosotros .container .carousel .carousel-controls .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 2px solid #61091a;
+  color: #61091a;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+#nosotros .container .carousel .carousel-controls .btn:hover {
+  background: #61091a;
+  color: white;
+}
+#nosotros .container .carousel .carousel-controls .btn i {
+  font-size: 1rem;
+}
+#nosotros .container .carousel .dots {
+  display: flex;
+  gap: 0.6rem;
+}
+#nosotros .container .carousel .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#nosotros .container .carousel .dot.active {
+  background: #61091a;
 }
 
 #mision {
@@ -602,7 +649,7 @@ header::after {
     display: none;
   }
   #nosotros .container .carousel {
-    height: 700px;
+    height: 75px;
   }
   #nosotros .container .carousel .card-us {
     text-align: center;
